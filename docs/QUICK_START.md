@@ -6,6 +6,62 @@ La solución tiene dos partes: el **add-on** (cliente nativo de SAP, .NET Framew
 
 ---
 
+## ⚠️ Para Claude Code — leer ANTES de desarrollar
+
+> Esta sección está dirigida al asistente **Claude Code** que vaya a trabajar en este
+> repositorio. Si eres Claude y abres este proyecto, **lee esto primero** y actúa en consecuencia
+> antes de tocar código.
+
+### 1. Confirma las reglas básicas y escríbelas en el `CLAUDE.md` local
+
+Al iniciar, **pregunta a la persona que va a ejecutar/desarrollar** y, con sus respuestas,
+**escribe las reglas en el archivo `CLAUDE.md` de este proyecto** (créalo en la raíz si no existe),
+para que queden persistentes en futuras sesiones. Confirma al menos estas reglas base:
+
+- **No hacer `git push` sin preguntar.** Nunca subir cambios al remoto sin confirmación explícita
+  del usuario en esa sesión. (También: no crear PRs ni `--force` sin permiso.)
+- **Migraciones del esquema SQL: preguntar cómo generarlas.** Antes de crear o modificar el
+  esquema de base de datos (las migraciones del modelo arquitectónico del software en SQL),
+  **pregunta al usuario el mecanismo que quiere usar** (p. ej. EF Core `dotnet ef migrations add`,
+  scripts SQL versionados, otra herramienta) y respétalo. No inventes el flujo de migraciones.
+- **Reglas propias del ejecutor.** Pregunta directamente a quien va a ejecutar esto: *"¿Qué reglas
+  adicionales quieres que siga?"* y agrégalas al `CLAUDE.md` local (estilo de commits, ramas,
+  qué tocar y qué no, idioma, etc.).
+
+> Plantilla mínima sugerida para el `CLAUDE.md` de este proyecto:
+>
+> ```markdown
+> # Reglas del proyecto addon-sap
+> - No hacer `git push` / PR / force-push sin preguntar al usuario en la sesión.
+> - Antes de generar migraciones SQL, preguntar el mecanismo (EF Core / scripts / otro).
+> - <reglas adicionales que indique el ejecutor>
+> ```
+
+### 2. Desarrolla con **superpowers** y guiándote por los SPEC
+
+- Usa, de preferencia, el skill **superpowers** de Claude para el flujo de desarrollo
+  (brainstorming → planes → TDD → revisión), en lugar de improvisar.
+- Toma como **fuente de verdad** los documentos del repo y trabaja **con base en ellos**:
+  - [`SPEC_BASE.md`](SPEC_BASE.md) — estructura, herramientas y orden de arranque.
+  - [`plan_addon_sap_b1.docx.md`](plan_addon_sap_b1.docx.md) — arquitectura.
+  - [`CUESTIONARIO_DECISIONES.md`](CUESTIONARIO_DECISIONES.md) — decisiones de Fase 0 (confírmalas
+    antes de implementar lo que dependa de ellas: proveedor de IA, motor de BD, etc.).
+
+### 3. Instala los MCP necesarios
+
+Según la tarea, instala/activa los **MCP** que hagan falta y confírmalo con el usuario. En
+particular, para el trabajo de base de datos y migraciones del backend:
+
+- **MCP de SQL** (servidor de base de datos): el de **SQL Server / MSSQL** o el de **PostgreSQL**,
+  según el motor que se confirme en Fase 0 (ver [`CUESTIONARIO_DECISIONES.md`](CUESTIONARIO_DECISIONES.md),
+  B1). Úsalo para inspeccionar el esquema y validar las migraciones, **sin** ejecutar cambios
+  destructivos sin permiso.
+
+> Confirma con el usuario el nombre exacto del MCP a instalar y sus credenciales antes de
+> conectarlo. Las claves nunca van al repositorio.
+
+---
+
 ## Prerrequisitos
 
 Antes de empezar, instala:

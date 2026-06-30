@@ -74,6 +74,18 @@ Las entradas más recientes van arriba.
 
 ---
 
+## 2026-06-30 — Sección "Para Claude Code" en la guía
+
+**Responsable:** —
+
+**Realizado:**
+- `docs/QUICK_START.md`: nueva sección dirigida a Claude Code con (1) reglas básicas a confirmar con el ejecutor y escribir en el `CLAUDE.md` local (no `push` sin preguntar; preguntar el mecanismo de migraciones SQL; pedir reglas propias del ejecutor), (2) uso de **superpowers** + los SPEC como fuente de verdad, y (3) instalación de MCP necesarios (MCP de SQL: MSSQL/PostgreSQL según Fase 0).
+
+**Pendientes detectados:**
+- [ ] Confirmar el nombre exacto del MCP de base de datos a instalar (depende del motor de Fase 0).
+
+---
+
 ## Seguimiento de fases
 
 | Fase | Objetivo | Estado | Notas |
