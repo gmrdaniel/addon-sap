@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>LN.Host</RootNamespace>
+    <AssemblyName>LN.AddOn.Host</AssemblyName>
+    <UseWindowsForms>true</UseWindowsForms>
+    <!-- El add-on corre como proceso de 32 bits para enganchar con la UI API del cliente B1. -->
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LN.Core\LN.Core.csproj" />
+    <ProjectReference Include="..\LN.Integrations.SL\LN.Integrations.SL.csproj" />
+    <ProjectReference Include="..\LN.Modules.Config\LN.Modules.Config.csproj" />
+    <ProjectReference Include="..\LN.Modules.ImagenesIA\LN.Modules.ImagenesIA.csproj" />
+    <ProjectReference Include="..\LN.Setup\LN.Setup.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SAPbouiCOM">
+      <HintPath>$(SAPB1_SDK_PATH)\Interop.SAPbouiCOM.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SAPbobsCOM">
+      <HintPath>$(SAPB1_SDK_PATH)\Interop.SAPbobsCOM.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

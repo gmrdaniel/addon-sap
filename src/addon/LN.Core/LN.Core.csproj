@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>LN.Core</RootNamespace>
+    <AssemblyName>LN.Core</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Serilog" Version="4.1.0" />
+  </ItemGroup>
+
+  <!--
+    Interop del SDK de SAP Business One.
+    Se referencian desde la instalación local del SDK; no se versionan en el repo.
+    Ajustar HintPath a la ruta real del SDK en la estación de desarrollo.
+  -->
+  <ItemGroup>
+    <Reference Include="SAPbouiCOM">
+      <HintPath>$(SAPB1_SDK_PATH)\Interop.SAPbouiCOM.dll</HintPath>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SAPbobsCOM">
+      <HintPath>$(SAPB1_SDK_PATH)\Interop.SAPbobsCOM.dll</HintPath>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

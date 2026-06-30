@@ -1,0 +1,44 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build_output/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userprefs
+*.cache
+*.dll.config
+
+# Rider
+.idea/
+
+# SAP B1 SDK interop assemblies (se referencian desde la instalación local del SDK)
+**/Interop.SAPbouiCOM.dll
+**/Interop.SAPbobsCOM.dll
+**/SAPbouiCOM*.dll
+**/SAPbobsCOM*.dll
+
+# Secrets / config local
+*.env
+.env
+**/appsettings.*.local.json
+**/secrets.json
+
+# .NET
+project.lock.json
+*.nupkg
+.packages/
+
+# Logs
+*.log
+logs/
+
+# OS
+Thumbs.db
+.DS_Store

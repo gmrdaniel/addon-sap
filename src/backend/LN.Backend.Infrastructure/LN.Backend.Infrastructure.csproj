@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>LN.Backend.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Proveedor de IA: confirmar OpenAI vs Azure OpenAI (decisión de Fase 0). -->
+    <!-- <PackageReference Include="Azure.AI.OpenAI" Version="2.1.0" /> -->
+    <!-- Persistencia: confirmar PostgreSQL vs SQL Server (decisión de Fase 0). -->
+    <!-- <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" /> -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LN.Backend.Domain\LN.Backend.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

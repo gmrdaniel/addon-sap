@@ -1,0 +1,47 @@
+# Entorno local del backend (Paso 7 de la Fase 1).
+# Levanta el API + base de datos para desarrollar sin depender de la nube.
+#
+# NOTA: motor de BD = PostgreSQL como PLACEHOLDER (decisión de Fase 0 pendiente).
+#   Si se confirma SQL Server, reemplazar el servicio "db" por:
+#     image: mcr.microsoft.com/mssql/server:2022-latest
+#   y ajustar ConnectionStrings__Billing al formato de SQL Server.
+#
+# Uso:
+#   cp env/.env.example env/.env   (y editar valores)
+#   docker compose --env-file env/.env up --build
+
+services:
+  api:
+    build:
+      context: ..                       # raíz del repo (el Dockerfile copia src/backend/)
+      dockerfile: src/backend/LN.Backend.Api/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Billing: "Host=db;Port=5432;Database=${DB_NAME};Username=${DB_USER};Password=${DB_PASSWORD}"
+      # La API key del modelo vive SOLO aquí (nunca en el add-on).
+      Vision__Provider: "${VISION_PROVIDER}"
+      Vision__ApiKey: "${VISION_API_KEY}"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  db_data:

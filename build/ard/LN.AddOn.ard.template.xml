@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Plantilla de Add-on Registration Data (.ard) para SAP Business One (Paso 8).
+  El .ard registra el add-on en SAP: nombre, versión, ejecutable y modo de arranque.
+
+  Cómo usar:
+    1. Reemplazar los marcadores {{...}}.
+    2. Generar el .ard final con el "Add-On Registration Data Generator" del SDK
+       (recomendado) o ajustar este XML a mano según la versión del SDK.
+    3. Empaquetar junto con el instalador (build/installer).
+
+  Marcadores:
+    {{ADDON_NAME}}      Nombre visible del add-on (ej. "Add-on LaNeta")
+    {{ADDON_VERSION}}   Versión (ej. 0.1.0)
+    {{PARTNER_NAME}}    LaNeta
+    {{EXE_NAME}}        LN.AddOn.Host.exe
+    {{INSTALL_FOLDER}}  Carpeta de instalación en la estación
+-->
+<AddOnInfo>
+  <AddOnName>{{ADDON_NAME}}</AddOnName>
+  <AddOnVersion>{{ADDON_VERSION}}</AddOnVersion>
+  <PartnerName>{{PARTNER_NAME}}</PartnerName>
+  <PartnerContact>administracion@laneta.com</PartnerContact>
+
+  <!-- Ejecutable principal del add-on -->
+  <Executable>{{EXE_NAME}}</Executable>
+  <InstallFolder>{{INSTALL_FOLDER}}</InstallFolder>
+
+  <!-- Modo de arranque: Automatic | Mandatory | Manual.
+       En Fase 1/piloto se sugiere Manual o Automatic (no Mandatory). -->
+  <StartupType>Automatic</StartupType>
+
+  <!-- .NET Framework requerido por el SDK de SAP B1 -->
+  <DotNetFramework>v4.8</DotNetFramework>
+
+  <!-- Archivos que se despliegan junto al ejecutable.
+       Incluir los interop del SDK e los ensamblados de los módulos. -->
+  <Files>
+    <File>LN.AddOn.Host.exe</File>
+    <File>LN.Core.dll</File>
+    <File>LN.Integrations.SL.dll</File>
+    <File>LN.Modules.Config.dll</File>
+    <File>LN.Modules.ImagenesIA.dll</File>
+    <File>LN.Setup.dll</File>
+    <File>Interop.SAPbouiCOM.dll</File>
+    <File>Interop.SAPbobsCOM.dll</File>
+  </Files>
+</AddOnInfo>

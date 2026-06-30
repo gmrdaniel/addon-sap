@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>LN.Setup</RootNamespace>
+    <AssemblyName>LN.Setup</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LN.Core\LN.Core.csproj" />
+  </ItemGroup>
+
+</Project>

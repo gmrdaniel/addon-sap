@@ -1,0 +1,14 @@
+<Project>
+  <!-- Propiedades MSBuild comunes a todos los proyectos del repositorio -->
+  <PropertyGroup>
+    <Company>LaNeta</Company>
+    <Product>Add-on Modular SAP Business One</Product>
+    <Version>0.1.0</Version>
+    <Authors>LaNeta</Authors>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+</Project>
