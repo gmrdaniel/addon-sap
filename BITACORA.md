@@ -14,10 +14,9 @@ Las entradas más recientes van arriba.
 **Realizado:**
 - Repositorio inicializado y publicado en GitHub: https://github.com/gmrdaniel/addon-sap (rama `main`).
 - Commits subidos: estructura base (`a9db83b`) y sección "Para Claude Code" en la guía (`3af9be2`).
-- Correo de avance enviado desde y hacia `daniel@laneta.com` (dirigido a Alejandro, firma de Daniel) con resumen de lo hecho y los pasos para continuar. Message ID: `19f1a002ad24520d`.
-
-**Pendientes detectados:**
-- [ ] Confirmar si el correo debe reenviarse directamente a Alejandro (p. ej. `chogi033@gmail.com`) además de a la cuenta de Daniel.
+- Correo de avance enviado desde `daniel@laneta.com` con resumen de lo hecho y los pasos para continuar (dirigido a Alejandro, firma de Daniel):
+  - Copia a `daniel@laneta.com` — Message ID: `19f1a002ad24520d`.
+  - A Alejandro (`chogi033@gmail.com`) — Message ID: `19f1a01e84dfc7b8`.
 
 ---
 
