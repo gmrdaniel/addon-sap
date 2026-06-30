@@ -7,6 +7,20 @@ Las entradas más recientes van arriba.
 
 ---
 
+## 2026-06-30 — Publicación en GitHub y comunicación
+
+**Responsable:** Daniel
+
+**Realizado:**
+- Repositorio inicializado y publicado en GitHub: https://github.com/gmrdaniel/addon-sap (rama `main`).
+- Commits subidos: estructura base (`a9db83b`) y sección "Para Claude Code" en la guía (`3af9be2`).
+- Correo de avance enviado desde y hacia `daniel@laneta.com` (dirigido a Alejandro, firma de Daniel) con resumen de lo hecho y los pasos para continuar. Message ID: `19f1a002ad24520d`.
+
+**Pendientes detectados:**
+- [ ] Confirmar si el correo debe reenviarse directamente a Alejandro (p. ej. `chogi033@gmail.com`) además de a la cuenta de Daniel.
+
+---
+
 ## 2026-06-30 — Estructura base del proyecto (pasos 1–6)
 
 **Responsable:** —
